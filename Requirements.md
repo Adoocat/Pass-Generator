@@ -3,7 +3,7 @@
 **1. Tkinter**<br>
 To install **tkinter** simply:<br>
 ```bash
-pip install Tkinter
+pip install tkinter
 ```
 If you have it installed or if you have Python version 3.9 or higher, you do not have to install it.
 
