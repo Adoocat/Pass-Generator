@@ -6,3 +6,6 @@ A random password generator with a user friendly GUI.
 - To generate the password press **"Oluştur"**.
 - To copy the password to clipboard, simply press **"Kopyala"**.
 - To select the complication level of the password, select 1 of the 3 options at the bottom right corner. Which are: **"Zayıf","Orta","Güçlü"**.
+
+# IMPORTANT NOTE!!!
+<H2>CHECK THE REQUIREMENTS</H2>
