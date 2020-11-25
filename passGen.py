@@ -2,6 +2,7 @@ import random
 import pyperclip 
 from tkinter import *
 from tkinter.ttk import *
+__author__ = "Adoocat"
   
 # Function for calculation of password 
 def low(): 
