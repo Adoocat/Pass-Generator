@@ -4,11 +4,11 @@ from tkinter import *
 from tkinter.ttk import *
 __author__ = "Adoocat"
   
-# Function for calculation of password 
+# Şifrenin Fonksiyonu 
 def low(): 
     entry.delete(0, END) 
   
-    # Get the length of passowrd 
+    # Şifre uzunluğu 
     length = var1.get() 
   
     lower = "abcdefghijklmnopqrstuvwxyz"
@@ -16,19 +16,19 @@ def low():
     digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !@#$%^&*()"
     password = "" 
   
-    # if strength selected is low 
+    # düşük
     if var.get() == 1: 
         for i in range(0, length): 
             password = password + random.choice(lower) 
         return password 
   
-    # if strength selected is medium 
+    # iorta 
     elif var.get() == 0: 
         for i in range(0, length): 
             password = password + random.choice(upper) 
         return password 
   
-    # if strength selected is strong 
+    # güçlü 
     elif var.get() == 3: 
         for i in range(0, length): 
             password = password + random.choice(digits) 
@@ -37,30 +37,29 @@ def low():
         print("Bir Seçenek Seçmeniz Gerek") 
   
   
-# Function for generation of password 
+# şifreyi oluşturan fonksiyon 
 def generate(): 
     password1 = low() 
     entry.insert(10, password1) 
   
   
-# Function for copying password to clipboard 
+# kopyalama tuşu 
 def copy1(): 
     random_password = entry.get() 
     pyperclip.copy(random_password) 
   
   
-# Main Function 
+# ANA FONKSİYON 
   
-# create GUI window 
+# pencereyi oluşturma 
 root = Tk() 
 var = IntVar() 
 var1 = IntVar() 
   
-# Title of your GUI window 
+# Başlık 
 root.title("Rastgele Şifre Oluşturucu") 
   
-# create label and entry to show 
-# password generated 
+# isimlendirme 
 Random_password = Label(root, text="Şifre") 
 Random_password.grid(row=0) 
 entry = Entry(root) 
@@ -70,17 +69,13 @@ entry.grid(row=0, column=1)
 c_label = Label(root, text="Uzunluk") 
 c_label.grid(row=1) 
   
-# create Buttons Copy which will copy 
-# password to clipboard and Generate 
-# which will generate the password 
+# kopyalama tuşunu ve diğer tuşları oluşturmak 
 copy_button = Button(root, text="Kopyala", command=copy1) 
 copy_button.grid(row=0, column=2) 
 generate_button = Button(root, text="Oluştur", command=generate) 
 generate_button.grid(row=0, column=3) 
   
-# Radio Buttons for deciding the 
-# strength of password 
-# Default strength is Medium 
+# Şifrenin komplikasyonunu seçmek için olan butonlar
 radio_low = Radiobutton(root, text="Zayıf", variable=var, value=1) 
 radio_low.grid(row=1, column=2, sticky='E') 
 radio_middle = Radiobutton(root, text="Orta", variable=var, value=0) 
@@ -89,7 +84,7 @@ radio_strong = Radiobutton(root, text="Güçlü", variable=var, value=3)
 radio_strong.grid(row=1, column=4, sticky='E') 
 combo = Combobox(root, textvariable=var1) 
   
-# Combo Box for length of your password 
+# Uzunluk seçenekleri
 combo['values'] = (8, 9, 10, 11, 12, 13, 14, 15, 16, 
                    17, 18, 19, 20, 21, 22, 23, 24, 25, 
                    26, 27, 28, 29, 30, 31, 32, "Uzunluk") 
@@ -97,5 +92,5 @@ combo.current(0)
 combo.bind('<<ComboboxSelected>>') 
 combo.grid(column=1, row=1) 
   
-# start the GUI 
+# ana fonksiyonu çalıştır
 root.mainloop() 
